@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supabasewithubereatsuser/register_page.dart';
 import 'package:supabasewithubereatsuser/update_password_page.dart';
+import 'package:supabasewithubereatsuser/deep_link_handler.dart';
 
 import 'forgot_password_page.dart';
 import 'home.dart';
@@ -22,7 +23,8 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => MyApp(), // Wrap your app
+      builder: (context) =>
+          DeepLinkHandler(child: MyApp()), // Wrap your app with DeepLinkHandler
     ),
   );
 }
